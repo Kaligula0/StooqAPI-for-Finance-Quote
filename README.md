@@ -6,6 +6,9 @@ It is highly helpful with assets that are not present in other APIs like e.g. Po
 # Installation
 Download files `StooqAPI*.pm` and paste them into Finance::Quote directory (probably `<perl_dir>\site\lib\Finance\Quote`). Then add their filenames (without `.pm` extension) (preferably in alphabetical order) to the `@MODULES` variable in `Quote.pm` (`<perl_dir>\site\lib\Finance`).
 
+# Use
+Methods are named same as filenames they're in – but filenames use CamelCase, while methods use snake_case (for example `stooq_api_usd2pln` in `StooqAPIusd2pln.pm`).
+
 # Why so many modules?
 Stooq API provides financial data for various assets, which is nice, but it never tells the asset's currency. (And I think it isn't likely to change soon, as I asked them). That's why you need to choose proper method (module) in F::Q for each asset you look up. I also created an additional version of each module, that converts the price from mother currency to PLN.
 
